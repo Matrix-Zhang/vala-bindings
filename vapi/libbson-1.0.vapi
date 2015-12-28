@@ -231,7 +231,7 @@ namespace Libbson {
 		public string as_json(out size_t? length = null);
 		public string array_as_json(out size_t? length = null);
 		public bool append_value(string key, int key_length, Value @value);
-		public bool append_array(string key, int key_length, Bson[] array);
+		public bool append_array(string key, int key_length, Bson array);
 		public bool append_binary(string key, int key_length, SubType subtype, uint8[] binary);
 		public bool append_bool(string key, int key_length, bool @value);
 		public bool append_code(string key, int key_length, string javascript);
