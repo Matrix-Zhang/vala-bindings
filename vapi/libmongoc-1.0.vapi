@@ -246,7 +246,7 @@ namespace Libmongoc {
 	[Compact]
 	public class Collection {
 		private Collection() {}
-		public Cursor aggregate(QueryFlag flag, Libbson.Bson pipeline, Libbson.Bson options, ReadPrefs? read_prefs = null);
+		public Cursor aggregate(QueryFlag flag, Libbson.Bson pipeline, Libbson.Bson? options = null , ReadPrefs? read_prefs = null);
 		public Cursor command(QueryFlag flag, uint32 skip, uint32 limit, uint32 batch_size, Libbson.Bson command, Libbson.Bson? fields = null, ReadPrefs? read_prefs = null);
 		public bool command_simple(Libbson.Bson command, ReadPrefs? read_prefs = null, Libbson.Bson? reply = null, out Libbson.Error error = null);
 		public int64 count(QueryFlag flag, Libbson.Bson query, uint32 skip = 0, uint32 limit = 0, ReadPrefs? read_prefs = null, out Libbson.Error error = null);
@@ -282,7 +282,7 @@ namespace Libmongoc {
 		[CCode (cname = "mongoc_client_new", has_type_id = "false")]
 		public Client(string uri_string);
 		[CCode (cname = "mongoc_client_new_from_uri", has_type_id = "false")]
-		public Client.form_uri(Uri uri);
+		public Client.from_uri(Uri uri);
 		public Cursor command(string db_name, QueryFlag flag, uint32 skip, uint32 limit, uint32 batch_size, Libbson.Bson query, Libbson.Bson? fields = null, ReadPrefs? read_prefs = null);
 		public void kill_cursor(int64 cursor_id);
 		public bool command_simple(string db_name, Libbson.Bson command, ReadPrefs? read_prefs = null, Libbson.Bson? reply = null, out Libbson.Error error = null);

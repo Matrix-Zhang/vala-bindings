@@ -209,7 +209,7 @@ namespace Libbson {
 		public uint32 len;
 		public Bson();
 		public Bson.from_json(uint8[] data, out Error error = null);
-		public Bson.form_data(uint8[] data);
+		public Bson.from_data(uint8[] data);
 		public Bson.sized_new(size_t size);
 		public Bson copy();
 		public void copy_to(Bson dst);
