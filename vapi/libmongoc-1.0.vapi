@@ -221,6 +221,17 @@ namespace Libmongoc {
 		public void update(Libbson.Bson selector, Libbson.Bson document, bool upsert);
 		public void update_one(Libbson.Bson selector, Libbson.Bson document, bool upsert);
 	}
+	
+	[CCode (cname = "mongoc_client_pool_t", cprefix = "mongoc_client_pool_", free_function = "mongoc_client_pool_destroy", has_type_id = "false")]
+	[Compact]
+	public class ClientPool {
+	    [CCode (cname = "mongoc_client_pool_new", has_type_id = "false")]
+	    public ClientPool(Uri uri);
+	    public void max_size(uint max_pool_size);
+	    public void min_size(uint min_pool_size);
+	    public Client pop();
+	    public void push(Client client);
+	}
 
 	[CCode (cname = "mongoc_database_t", cprefix = "mongoc_database_", free_function = "mongoc_database_destroy", has_type_id = "false")]
 	[Compact]
